@@ -42,6 +42,7 @@
             transform:scale(1.1);
             box-shadow:0 0 0 10px #ffffff18;
         }
+        
     </style>
 
     <body>
@@ -61,6 +62,21 @@
         <div id="song" class="song"></div>
         
     </div>
+
+    <script>
+
+    const mic=document.getElementById("mic");
+    const status=document.getElementById("status");
+    const status=document.getElementById("song");
+
+    const SpeechRecognition=
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    let youtubeTab=null;
+    let listening=false;
+        
+    </script>
         
     </body>
 </html>
