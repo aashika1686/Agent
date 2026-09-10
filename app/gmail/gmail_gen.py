@@ -28,4 +28,39 @@ Rules:
 Output exactly :
 
   SUBJECT: <subject>
-  
+  BODY:
+  <email body>
+
+  User command:
+  {command}
+  """
+
+      url=(
+        f"https://generativelanguage.googleapis.com/"
+        f"v1beta/models/{MODEL}:generateContent"
+        )
+
+      payload = {
+        "contents": [{"parts": [{"text":prompt}]}]
+        "generationConfig":{
+          "temperature":07,
+        "maxOutputTokens":800
+      }
+}
+
+      req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode(),
+        headers={
+          "content-type":"application /json",
+          "x-goog-api-key":API_KEY
+          },
+          method="POST"
+      )
+
+    for attempt in range(4):
+      try:
+        with urllib.request.urlopen(req,timeout=30) as response:
+          data = json.loads(response.read().decose())
+          
+          
