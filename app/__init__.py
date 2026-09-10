@@ -49,16 +49,13 @@ def create_app():
                 return jsonify({"success":False,"message":"Please give a Gmail command."}),400
 
             recipient = extract_email(command)
-
             email = generate_email_with_gemini(command)
 
-            return jsonify({"success":True,"type":"email","email_generated":True,"recipient":recipient,
-                            "subject":email["subject"],"body":email["body"],"gmail_url":create_gmail_url(email["subject"],email["body"],recipient)
-        })
+            return jsonify({"success":True,"type":"email","email_generated":True,"recipient":recipient,"subject":email["subject"],"body":email["body"],"gmail_url":create_gmail_url(email["subject"],email["body"],recipient)})
             
         except Exception as e :
             return jsonify({"success":False,"message":str(e)}),500
 
-return app
+    return app
 
 
