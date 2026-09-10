@@ -53,7 +53,8 @@ def create_app():
             email = generate_email_with_gemini(command)
 
             return jsonify({"success":True,"type":"email","email_generated":True,"recipient":recipient,
-                            "subject":email["subject"],"body":email["body"],"gmail_url":create_gmail_url(email["subject"],email["body"],recipient)})
+                            "subject":email["subject"],"body":email["body"],"gmail_url":create_gmail_url(email["subject"],email["body"],recipient)
+        })
             
         except Exception as e :
             return jsonify({"success":False,"message":str(e)}),500
