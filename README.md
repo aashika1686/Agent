@@ -1,4 +1,4 @@
-1. Agent Product for Youtube & gmail :
+1. Agent Product for youtube & gmail :
 2. app -> __init__.py
 3. app -> requirements.txt
 4. app -> wsgi.py
